@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Etiqueta Meta de Viewport para diseño responsivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Macintosh 7100/80</title>
+    <!-- Estilos Internos -->
+    <style>
+        .box {
+        background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+        padding: 20px;
+        margin: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    }
+    @media (max-width: 600px) {
+        .box {
+            margin: 10px;
+            padding: 15px;
+        }
+    }
+        /* Imagen de fondo para todo el cuerpo de la página */
+        body {
+            background-image: url('fondo.jpg'); /* Ruta relativa al HTML */
+            background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            background-position: center center; /* Centra la imagen */
+            background-attachment: fixed; /* Fija la imagen al hacer scroll */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+/* Clase para cuadros estilizados */
+.box {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+}
+
+/* Estilos para la navegación */
+nav {
+    background-color: rgba(51, 51, 51, 0.8); /* Fondo semitransparente */
+    padding: 10px 0;
+    border-radius: 8px;
+    margin: 0 20px; /* Para alinearse con .box */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+nav ul li {
+    margin: 0 15px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para las secciones */
+.section {
+    display: none;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente para legibilidad */
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+.active {
+    display: block;
+}
+
+/* Contenedor para imagen y texto */
+.content {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacio entre la imagen y el texto */
+}
+
+/* Estilos para las imágenes dentro de las secciones */
+.section-image {
+    max-width: 40%; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    object-fit: cover; /* Ajusta la imagen para cubrir el área sin distorsión */
+}
+
+/* Estilos para los botones de navegación */
+.buttons {
+    text-align: center;
+    margin: 20px 0;
+}
+.buttons button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+.buttons button:hover:not(:disabled) {
+    background-color: #555;
+}
+
+/* Estilos responsivos adicionales */
+@media (max-width: 600px) {
+    .box {
+        margin: 10px;
+        padding: 15px;
+    }
+    nav {
+        margin: 10px;
+        padding: 15px 0;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+    .buttons button {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .section-image {
+        max-width: 80%; /* Ajusta el tamaño en pantallas pequeñas */
+    }
+}
+/* Estilos para el texto dentro de las secciones */
+.content p {
+    text-align: right; /* Alinea el texto a la derecha */
+}
+/* Contenedor para imagen y texto usando Flexbox */
+.content {
+    display: flex;                  /* Activa Flexbox */
+    flex-direction: row;            /* Dispone los elementos en una fila */
+    align-items: center;            /* Alinea verticalmente al centro */
+    justify-content: flex-end;      /* Alinea los elementos hacia la derecha */
+    gap: 20px;                      /* Espacio entre la imagen y el texto */
+}
+
+/* Estilos para la imagen */
+.section-image {
+    max-width: 40%;                 /* Ajusta el ancho máximo de la imagen */
+    height: auto;                   /* Mantiene la proporción original de la imagen */
+    border-radius: 5px;             /* Suaviza las esquinas de la imagen */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil */
+    object-fit: cover;              /* Ajusta la imagen para cubrir el área sin distorsión */
+}
+
+/* Estilos para el texto */
+.content p {
+    flex: 1;                        /* Permite que el texto ocupe el espacio restante */
+    text-align: right;              /* Alinea el texto a la derecha */
+}
+/* Responsividad: Ajustes para pantallas pequeñas */
+@media (max-width: 600px) {
+    .content {
+        flex-direction: column;     /* Apila los elementos verticalmente */
+        align-items: center;        /* Centra los elementos horizontalmente */
+        justify-content: center;    /* Centra los elementos verticalmente */
+    }
+    .section-image {
+        max-width: 80%;             /* Ajusta el tamaño de la imagen en dispositivos móviles */
+    }
+    .content p {
+        text-align: center;         /* Centra el texto en dispositivos móviles */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header class="box">
+        <h1>Partes de una CPU Power Macintosh 7100/80</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#struct">Estructura General</a></li>
+            <li><a href="#cpu">Procesador</a></li>
+            <li><a href="#ram">Memoria RAM</a></li>
+            <li><a href="#motherboard">Placa Base-Motherboard</a></li>
+            <li><a href="#dram">Dram Simms</a></li>
+            <li><a href="#vram">tarjeta grafica</a></li>
+            <li><a href="#disi">Disipador</a></li>
+            <li><a href="#cds">Lector de Discos Compactos</a></li>
+            <li><a href="#fuente">Fuente de Poder</a></li>
+            <li><a href="#disco">Disco Duro</a></li>
+            <li><a href="#spkr">Parlante</a></li>
+            <li><a href="#disck">Lector de Disckettes</a></li>
+         
+        </ul>
+    </nav>
+
+    <main>
+            <section id="struct" class="section active">
+            <h2>Estructura General</h2>
+            <div class="content">
+                <img src="imagenes/struct.jpg" class="section-image">
+                <img src="imagenes/creado por.png" class="section-image">
+                <p>
+                   la cpu creada por Zenon Kuc y Sandy Hiser en los años noventa implementan la arquitectura RISC (Reduced Instruction Set Computer) dejando de lado la CISC (Complex Instruction Set Computer) para mejorar la eficiencia de diseño y uso
+                </p>
+            </div>
+        </section>
+        <section id="cpu" class="section ">
+            <h2>Procesador (CPU)</h2>
+            <div class="content">
+                <img src="imagenes/procesador.jpg"  class="section-image">
+                <p>
+                    El procesador es el cerebro de la computadora, encargado de ejecutar instrucciones y procesar datos, el procesador en colaboracion entre Apple, IBM y Motorola fue de los primeros usados en la linea de consumidores profesionales de apple como ingenieros y diseñadores, con velocidades de 66/80/100/120 MHz, 2.8 millones de transistores, tamaño de bus de datos de 32 bits y hasta 3 instrucciones por ciclo
+                </p>
+            </div>
+        </section>
+        
+        <section id="RAM" class="section ">
+            <h2>Random Access Memory (RAM)</h2>
+            <div class="content">
+                <img src="imagenes/ram.jpg" class="section-image">
+                <p>
+                   las dos tarjetas ram tienen chips etiquetados con la serie d421256 SIL8V-12JP y 3M 0957-4 lo cual indica que una es de 8 mb y la otra de 4 mb de marca Fujitsu
+                </p>
+            </div>
+        </section>
+
+        <section id="Motherboard" class="section ">
+            <h2>Placa Base Motherboard</h2>
+            <div class="content">
+                <img src="imagenes/mama tarjeta.jpg" class="section-image">
+                <p>
+                   la placa base cuenta con diferentes ranuras como lo son, SIMM de 72 pines, puerto DB-15 para el monitor o conocidos como ADB (Apple Desktop Bus) tambien usados para perifericos, ranuras de expansion llamadas NuBus lo que permite añadir tarjetas de video o tarjetas de red adicionales.
+                </p>
+            </div>
+        </section>
+
+        <section id="Dram" class="section ">
+            <h2>Dram Simms</h2>
+            <div class="content">
+                <img src="imagenes/dram slot.jpg" class="section-image">
+                <p>
+                    DRAM: Dynamic Random Access Memory (Memoria de Acceso Aleatorio Dinámico) llamada dinamica porque necesita ser refrescada cada cierto tiempo para mantener la informacion, mas barata y mas eficiente que la static ram, tambien usada en la epoca
+                    SIMM: Single In-line Memory Module (Módulo de Memoria en Línea Simple) significa simplemente el metodo la encapsular la informacion mediante contactos electricos y pines, que van desde 30 hasta 90 pines
+
+                </p>
+            </div>
+        </section>
+        
+        <section id="vram" class="section ">
+            <h2>Tarjeta grafica</h2>
+            <div class="content">
+                <img src="imagenes/grafica.jpg"  class="section-image">
+                <p>
+                    la video random access memory es un tipo de memoria diseñada específicamente para almacenar datos gráficos, e utiliza para almacenar imágenes, texturas, y otros datos necesarios para renderizar gráficos en la pantalla 
+                </p>
+            </div>
+        </section>
+
+        <section id="disi" class="section ">
+            <h2>Disipador</h2>
+            <div class="content">
+                <img src="imagenes/disipador.jpg"  class="section-image">
+                <p>
+                   el disipador es usado como medio de enfriamiento para el procesador, en esta epoca se usaba simplemente pasta termica y una estructura metalica porque en la epoca no habria muchos programas para generar demasiado estres a el procesador
+                </p>
+            </div>
+        </section>
+
+        <section id="cds" class="section ">
+            <h2>Lector de Discos Compactos</h2>
+            <div class="content">
+                <img src="imagenes/lector discos.jpg"  class="section-image">
+                <p>
+                   el lector de discos compactos permite leer informacion almacenada mediante un lector laser y un fotodetector, asi como permite tambien insertar o "quemar" informacion dentro
+                </p>
+            </div>
+        </section>
+
+        <section id="fuente" class="section ">
+            <h2>Fuente de Poder</h2>
+            <div class="content">
+                <img src="imagenes/fuente abierta.jpg"  class="section-image">
+                <img src="imagenes/fuente cerrada.jpg"  class="section-image">
+                <p>
+                   la fuente de poder es usada para alimentar a toda el harware del computador, mediante un transformador, rectificadores de voltaje (convertir corriente alterna a corriente continua) y reguladores de voltaje, y , antes no usado pero implemetado años despues, los breackers, dispositivos que interrumpen la corriente electrica para prevenir los daños de los otros componentes en caso de una anomalia
+                </p>
+            </div>
+        </section>
+
+        <section id="Disco" class="section ">
+            <h2>Disco Duro</h2>
+            <div class="content">
+                <img src="imagenes/disco arriba.jpg"  class="section-image">
+                <img src="imagenes/disco abajo.jpg"  class="section-image">
+                <p>
+                   cuenta con un disco duro  (unico en la epoca,precursor de los NVDme o SSD (disco de estado solido)) que funciona mediante platos, que son discos magneticos que giran a gran velocidad generando asi la posibilidad de almacenar y leer informacion, en esta epoca los almacenamientos oscilaban entre 100 mb y algunos gb, lo cual actualmente seria contraproducente
+                </p>
+            </div>
+        </section>
+
+        <section id="spkr" class="section ">
+            <h2>Parlante</h2>
+            <div class="content">
+                <img src="imagenes/parlante.jpg"  class="section-image">
+                <p>
+                  el parlante conectado directamente a la motherboard usando una bobina movil e imanes que permitian transformar electricidad en ondas sonoras
+                </p>
+            </div>
+        </section>
+
+        <section id="disck" class="section ">
+            <h2>Lector de Disckettes</h2>
+            <div class="content">
+                <img src="imagenes/disckette.png"  class="section-image">
+                <img src="imagenes/lector disckette.jpg"  class="section-image">
+                <p>
+                   el disckette junto a su lector era la manera mas eficiente de almacenar datos e archivos, funcionaba con un disco metalico muy parecido a el disco duro, y en la parte de arriba tiene el cabezal de lectura e escritura, usado para reescribir los datos del disco flexible
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <div class="buttons">
+        <button id="prevBtn" disabled>Anterior</button>
+        <button id="nextBtn">Siguiente</button>
+    </div>
+
+    <footer class="box">
+        <p>    presentado a Edgar Eduardo Diaz Cely, Universidad Distrital Francisco Jose de Caldas.</p>
+    </footer>
+
+    <script>
+        // JavaScript para controlar la navegación con botones
+        const sections = document.querySelectorAll('.section');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentSection = 0;
+
+        function updateSections() {
+            sections.forEach((section, index) => {
+                section.classList.toggle('active', index === currentSection);
+            });
+            prevBtn.disabled = currentSection === 0;
+            nextBtn.disabled = currentSection === sections.length - 1;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSection > 0) {
+                currentSection--;
+                updateSections();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSection < sections.length - 1) {
+                currentSection++;
+                updateSections();
+            }
+        });
+    </script>
+</body>
+</html>
